@@ -3,9 +3,14 @@ import React, { useState } from 'react';
 import { weekSections, WeekSectionType, ChecklistItemType } from '@/lib/data';
 import WeekSection from './WeekSection';
 import ProgressTracker from './ProgressTracker';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { X, BarChart2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ChecklistSection: React.FC = () => {
   const [sections, setSections] = useState<WeekSectionType[]>(weekSections);
+  const [showMobileProgress, setShowMobileProgress] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleToggleComplete = (itemId: string) => {
     const updatedSections = sections.map(section => {
@@ -19,6 +24,15 @@ const ChecklistSection: React.FC = () => {
     });
     
     setSections(updatedSections);
+    
+    // On mobile, briefly show the progress tracker when an item is completed
+    if (isMobile) {
+      setShowMobileProgress(true);
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        setShowMobileProgress(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -42,7 +56,7 @@ const ChecklistSection: React.FC = () => {
             ))}
           </div>
           
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 hidden md:block">
             <div className="sticky top-6">
               <ProgressTracker weekSections={sections} />
               
@@ -87,6 +101,46 @@ const ChecklistSection: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Mobile floating progress button */}
+      {isMobile && (
+        <div className="md:hidden fixed bottom-6 right-6 z-50">
+          <AnimatePresence>
+            {showMobileProgress ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                className="bg-white rounded-lg shadow-lg p-4 max-w-xs"
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <h4 className="font-medium text-gray-900">Your Progress</h4>
+                  <button 
+                    onClick={() => setShowMobileProgress(false)}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+                <ProgressTracker weekSections={sections} />
+                <div className="text-xs text-gray-500 mt-3 text-center">
+                  Auto-hiding in a few seconds...
+                </div>
+              </motion.div>
+            ) : (
+              <motion.button
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setShowMobileProgress(true)}
+                className="bg-priority-high text-white p-3 rounded-full shadow-lg flex items-center justify-center"
+              >
+                <BarChart2 size={24} />
+              </motion.button>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
     </section>
   );
 };

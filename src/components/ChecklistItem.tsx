@@ -31,6 +31,11 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
     setIsExpanded(!isExpanded);
   };
 
+  const handleToggleComplete = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onToggleComplete(item.id);
+  };
+
   const Icon = item.icon;
 
   return (
@@ -123,10 +128,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
             
             <div className="mt-4 ml-12">
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onToggleComplete(item.id);
-                }}
+                onClick={handleToggleComplete}
                 className={cn(
                   "text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors",
                   item.completed
