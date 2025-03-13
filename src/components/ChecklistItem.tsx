@@ -108,6 +108,8 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
                           key={linkIndex}
                           href={link.url}
                           className="inline-flex items-center text-xs font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-full px-3 py-1 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           {link.label}
                           <ExternalLink size={12} className="ml-1" />

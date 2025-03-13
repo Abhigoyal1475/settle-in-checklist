@@ -1,3 +1,4 @@
+
 import { 
   Smartphone, Wifi, CreditCard, Building, Bus, 
   Banknote, AppWindow, FileText, Users, ShoppingBag, 
@@ -40,13 +41,31 @@ export const weekSections: WeekSectionType[] = [
         description: "For calls, internet, and bank verification",
         details: [
           {
-            text: "Best SIMs for students: T-Mobile, Mint Mobile, AT&T, Visible.",
+            text: "T-Mobile: Offers $25/mo student plans with 5G coverage and unlimited talk/text. Best for overall coverage in most cities.",
             links: [
-              { label: "View Best SIM Offers", url: "#sim-offers" }
+              { label: "T-Mobile Student Offer", url: "#t-mobile-student" }
             ]
           },
           {
-            text: "Most carriers offer student discounts and referral bonuses. Ask for student plans specifically.",
+            text: "Mint Mobile: Budget-friendly at $15/mo for 4GB data. Perfect for cost-conscious students with good T-Mobile coverage in your area.",
+            links: [
+              { label: "Mint Mobile Referral", url: "#mint-mobile-referral" }
+            ]
+          },
+          {
+            text: "AT&T: Reliable nationwide coverage at $35/mo for students. Great for rural areas and consistent service.",
+            links: [
+              { label: "AT&T Student Discount", url: "#att-student" }
+            ]
+          },
+          {
+            text: "Visible (Verizon): Unlimited data for $25/mo with Party Pay. Excellent for heavy data users.",
+            links: [
+              { label: "Visible Party Pay", url: "#visible-party-pay" }
+            ]
+          },
+          {
+            text: "Most carriers offer student discounts and referral bonuses. Ask for student plans specifically and bring your university ID.",
           }
         ],
         icon: Smartphone,
@@ -58,13 +77,31 @@ export const weekSections: WeekSectionType[] = [
         description: "For work, study, & entertainment",
         details: [
           {
-            text: "Best internet providers: Xfinity, AT&T Fiber, Spectrum.",
+            text: "Xfinity: Student plans from $35/mo with 200Mbps speeds. Most widely available in urban areas.",
             links: [
-              { label: "Get Best Deals on WiFi", url: "#wifi-deals" }
+              { label: "Xfinity Student Offer", url: "#xfinity-student" }
             ]
           },
           {
-            text: "Most apartments have pre-installed connections. Ask your leasing office for recommended providers.",
+            text: "AT&T Fiber: High-speed fiber starting at $45/mo for 300Mbps. Best for online gaming and video conferences.",
+            links: [
+              { label: "AT&T Fiber Deals", url: "#att-fiber-deals" }
+            ]
+          },
+          {
+            text: "Spectrum: No data caps starting at $49.99/mo for 300Mbps. Good option if you stream a lot of content.",
+            links: [
+              { label: "Spectrum Internet", url: "#spectrum-internet" }
+            ]
+          },
+          {
+            text: "Google Fiber: Ultra-fast 1Gbps internet at $70/mo. Limited availability but worth it if available in your area.",
+            links: [
+              { label: "Check Google Fiber", url: "#google-fiber" }
+            ]
+          },
+          {
+            text: "Most apartments have pre-installed connections. Ask your leasing office for recommended providers and potential building-wide discounts.",
           }
         ],
         icon: Wifi,
@@ -79,7 +116,13 @@ export const weekSections: WeekSectionType[] = [
             text: "Visit your university's ID card office with your admission letter and passport.",
           },
           {
+            text: "Typically located in the student union or administration building. Check your university's website for exact location and hours.",
+          },
+          {
             text: "Your ID card provides access to campus buildings, libraries, and often includes meal plans.",
+          },
+          {
+            text: "Many local businesses offer student discounts with your university ID. Ask about the discount program at your orientation.",
           }
         ],
         icon: CreditCard,
@@ -91,10 +134,24 @@ export const weekSections: WeekSectionType[] = [
         description: "Cheap public transport for daily commutes",
         details: [
           {
-            text: "Cost: Approximately $40/month for unlimited rides.",
+            text: "Cost: Approximately $40/month for unlimited rides in most major cities.",
           },
           {
-            text: "Visit your university's transportation office or local transit authority with your student ID.",
+            text: "Visit your university's transportation office with your student ID to get discounted rates. Some universities include transit passes in tuition.",
+          },
+          {
+            text: "Download transit apps like Citymapper or Transit for real-time schedules and route planning.",
+            links: [
+              { label: "Citymapper App", url: "#citymapper" },
+              { label: "Transit App", url: "#transit-app" }
+            ]
+          },
+          {
+            text: "Consider ride-sharing services like Uber and Lyft for areas with limited public transportation. Look for student discount codes.",
+            links: [
+              { label: "Uber Student", url: "#uber-student" },
+              { label: "Lyft Student", url: "#lyft-student" }
+            ]
           }
         ],
         icon: Bus,
@@ -106,13 +163,31 @@ export const weekSections: WeekSectionType[] = [
         description: "Essential for paying bills and receiving funds",
         details: [
           {
-            text: "Best checking accounts for students: Chase, Bank of America, Wells Fargo.",
+            text: "Chase College Checking: No monthly fee for up to 5 years while in college. Large ATM network and modern mobile app.",
             links: [
-              { label: "See Best Bank Offers", url: "#bank-offers" }
+              { label: "Chase $200 Bonus", url: "#chase-bonus" }
             ]
           },
           {
-            text: "Bring your passport, I-20, university acceptance letter, and proof of address.",
+            text: "Bank of America Advantage Banking: Waived maintenance fees for students under 25. Great if you need branches across the country.",
+            links: [
+              { label: "BofA Student Account", url: "#bofa-student" }
+            ]
+          },
+          {
+            text: "Wells Fargo Everyday Checking: No monthly service fee for students. Easy to set up direct deposit for campus jobs.",
+            links: [
+              { label: "Wells Fargo Student", url: "#wells-fargo-student" }
+            ]
+          },
+          {
+            text: "Capital One 360 Checking: No fees or minimums and earns interest. Completely online with great digital tools.",
+            links: [
+              { label: "Capital One Account", url: "#capital-one" }
+            ]
+          },
+          {
+            text: "Bring your passport, I-20, university acceptance letter, and proof of address when applying in person.",
           }
         ],
         icon: Banknote,
@@ -125,15 +200,42 @@ export const weekSections: WeekSectionType[] = [
         details: [
           {
             text: "Transportation: Uber, Lyft, Transit, Google Maps",
+            links: [
+              { label: "Uber", url: "#uber" },
+              { label: "Lyft", url: "#lyft" },
+              { label: "Transit", url: "#transit" },
+              { label: "Google Maps", url: "#google-maps" }
+            ]
           },
           {
             text: "Food & Groceries: UberEats, DoorDash, Instacart, Walmart+",
+            links: [
+              { label: "UberEats ($10 Off)", url: "#ubereats" },
+              { label: "DoorDash ($15 Off)", url: "#doordash" },
+              { label: "Instacart", url: "#instacart" },
+              { label: "Walmart+", url: "#walmart" }
+            ]
           },
           {
             text: "Payments: Zelle, Venmo, PayPal, Cash App",
+            links: [
+              { label: "Venmo", url: "#venmo" },
+              { label: "Cash App ($5 Bonus)", url: "#cash-app" }
+            ]
           },
           {
             text: "Shopping: Amazon, Facebook Marketplace, OfferUp",
+            links: [
+              { label: "Amazon Prime Student", url: "#amazon-student" },
+              { label: "Facebook Marketplace", url: "#facebook" }
+            ]
+          },
+          {
+            text: "Student Discounts: UNiDAYS, Student Beans, Prime Student",
+            links: [
+              { label: "UNiDAYS", url: "#unidays" },
+              { label: "Student Beans", url: "#student-beans" }
+            ]
           }
         ],
         icon: AppWindow,
