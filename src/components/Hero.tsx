@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Smartphone, Wifi, CreditCard, Bus, BankNote, AppWindow } from 'lucide-react';
+import { Smartphone, Wifi, CreditCard, Bus, Banknote, AppWindow } from 'lucide-react';
 
 const Hero = () => {
   const scrollToChecklist = () => {
@@ -18,7 +17,7 @@ const Hero = () => {
       
       {/* Floating Icons Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {[Smartphone, Wifi, CreditCard, Bus, BankNote, AppWindow].map((Icon, index) => (
+        {[Smartphone, Wifi, CreditCard, Bus, Banknote, AppWindow].map((Icon, index) => (
           <div 
             key={index}
             className="absolute animate-float opacity-5"

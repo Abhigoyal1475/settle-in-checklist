@@ -1,7 +1,7 @@
 
 import { 
   Smartphone, Wifi, CreditCard, Building, Bus, 
-  BankNote, AppWindow, FileText, Users, ShoppingBag, 
+  Banknote, AppWindow, FileText, Users, ShoppingBag, 
   HeartPulse, BadgeCheck, MapPin 
 } from "lucide-react";
 
