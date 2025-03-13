@@ -6,6 +6,7 @@ import ProgressTracker from './ProgressTracker';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { X, BarChart2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AdPlaceholder from './AdPlaceholder';
 
 const ChecklistSection: React.FC = () => {
   const [sections, setSections] = useState<WeekSectionType[]>(weekSections);
@@ -57,8 +58,11 @@ const ChecklistSection: React.FC = () => {
           </div>
           
           <div className="md:col-span-1 hidden md:block">
-            <div className="sticky top-6">
+            <div className="sticky top-6 space-y-6">
               <ProgressTracker weekSections={sections} />
+              
+              {/* Google Ad Placement - Top */}
+              <AdPlaceholder type="vertical" />
               
               <div className="glassmorphism p-5">
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">Resources</h3>
@@ -97,6 +101,9 @@ const ChecklistSection: React.FC = () => {
                   </li>
                 </ul>
               </div>
+              
+              {/* Google Ad Placement - Bottom */}
+              <AdPlaceholder type="vertical" />
             </div>
           </div>
         </div>
@@ -139,6 +146,13 @@ const ChecklistSection: React.FC = () => {
               </motion.button>
             )}
           </AnimatePresence>
+        </div>
+      )}
+      
+      {/* Mobile ad placement at bottom */}
+      {isMobile && (
+        <div className="mt-10 md:hidden">
+          <AdPlaceholder type="horizontal" />
         </div>
       )}
     </section>
