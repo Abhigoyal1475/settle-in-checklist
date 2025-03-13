@@ -1,4 +1,3 @@
-
 import { 
   Smartphone, Wifi, CreditCard, Building, Bus, 
   Banknote, AppWindow, FileText, Users, ShoppingBag, 
@@ -116,7 +115,7 @@ export const weekSections: WeekSectionType[] = [
             text: "Bring your passport, I-20, university acceptance letter, and proof of address.",
           }
         ],
-        icon: BankNote,
+        icon: Banknote,
         completed: false
       },
       {
