@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { WeekSectionType } from '@/lib/data';
 import ChecklistItem from './ChecklistItem';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Badge } from './ui/badge';
 
 interface WeekSectionProps {
   section: WeekSectionType;
@@ -62,8 +63,9 @@ const WeekSection: React.FC<WeekSectionProps> = ({ section, onToggleComplete, is
   return (
     <motion.div 
       className={cn(
-        "mb-10 rounded-xl overflow-hidden relative",
-        isFullyCompleted ? "border border-green-200 shadow-green-100/20 shadow-lg" : ""
+        "mb-10 rounded-xl overflow-hidden relative p-5",
+        isFullyCompleted ? "border border-green-200 shadow-green-100/20 shadow-lg" : "",
+        !isFullyCompleted ? "border border-gray-100" : ""
       )}
       animate={isCompleted ? {
         y: [0, -10, 0],
@@ -146,7 +148,7 @@ const WeekSection: React.FC<WeekSectionProps> = ({ section, onToggleComplete, is
       
       {/* Celebration badge for completed sections */}
       {isFullyCompleted && (
-        <div className="absolute top-3 right-3 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full flex items-center">
+        <div className="absolute top-3 right-14 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full flex items-center">
           <svg className="w-3 h-3 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
           </svg>
