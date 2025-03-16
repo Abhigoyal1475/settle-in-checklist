@@ -12,6 +12,9 @@ const ChecklistSection: React.FC = () => {
   const [sections, setSections] = useState<WeekSectionType[]>(weekSections);
   const [showMobileProgress, setShowMobileProgress] = useState(false);
   const isMobile = useIsMobile();
+  
+  // Track when a section is completed for celebration
+  const [completedSectionId, setCompletedSectionId] = useState<string | null>(null);
 
   const handleToggleComplete = (itemId: string) => {
     const updatedSections = sections.map(section => {
@@ -21,6 +24,18 @@ const ChecklistSection: React.FC = () => {
         }
         return item;
       });
+      
+      // Check if this section was just completed
+      const sectionCompleted = 
+        updatedItems.every(item => item.completed) && 
+        !section.items.every(item => item.completed);
+      
+      if (sectionCompleted) {
+        setCompletedSectionId(section.id);
+        // Reset completed section ID after 3 seconds
+        setTimeout(() => setCompletedSectionId(null), 3000);
+      }
+      
       return { ...section, items: updatedItems };
     });
     
@@ -37,7 +52,29 @@ const ChecklistSection: React.FC = () => {
   };
 
   return (
-    <section id="checklist-section" className="py-16 px-6 bg-gray-50">
+    <section id="checklist-section" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
+      {/* Confetti animation container - positioned absolutely */}
+      {completedSectionId && (
+        <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+          <div className="confetti-container">
+            {Array.from({ length: 50 }).map((_, i) => (
+              <div 
+                key={i}
+                className="confetti"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `-10%`,
+                  backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                  width: `${Math.random() * 10 + 5}px`,
+                  height: `${Math.random() * 10 + 5}px`,
+                  animation: `fall ${Math.random() * 3 + 2}s linear forwards, sway ${Math.random() * 4 + 3}s ease-in-out infinite alternate`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-2 text-center text-gray-900">
           Your Step-by-Step Checklist
@@ -53,6 +90,7 @@ const ChecklistSection: React.FC = () => {
                 key={section.id}
                 section={section}
                 onToggleComplete={handleToggleComplete}
+                isCompleted={completedSectionId === section.id}
               />
             ))}
           </div>
@@ -61,8 +99,8 @@ const ChecklistSection: React.FC = () => {
             <div className="sticky top-6 space-y-6">
               <ProgressTracker weekSections={sections} />
               
-              {/* Google Ad Placement - Top */}
-              <AdPlaceholder type="vertical" />
+              {/* Google Ad Placement - Top - Using medium-rectangle for less height */}
+              <AdPlaceholder type="medium-rectangle" />
               
               <div className="glassmorphism p-5">
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">Resources</h3>
@@ -102,8 +140,8 @@ const ChecklistSection: React.FC = () => {
                 </ul>
               </div>
               
-              {/* Google Ad Placement - Bottom */}
-              <AdPlaceholder type="vertical" />
+              {/* Google Ad Placement - Bottom - Using medium-rectangle for less height */}
+              <AdPlaceholder type="medium-rectangle" />
             </div>
           </div>
         </div>

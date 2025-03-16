@@ -3,7 +3,7 @@ import React from 'react';
 import { ExternalLink } from 'lucide-react';
 
 interface AdPlaceholderProps {
-  type: 'vertical' | 'horizontal';
+  type: 'vertical' | 'horizontal' | 'medium-rectangle';
 }
 
 const AdPlaceholder: React.FC<AdPlaceholderProps> = ({ type }) => {
@@ -13,7 +13,13 @@ const AdPlaceholder: React.FC<AdPlaceholderProps> = ({ type }) => {
       width: '300px',
       height: '600px',
       text: '300 x 600',
-      className: 'w-full h-[600px]'
+      className: 'w-full h-[400px] md:h-[400px]' // Reduced height from 600px to 400px
+    },
+    'medium-rectangle': {
+      width: '300px',
+      height: '250px',
+      text: '300 x 250',
+      className: 'w-full h-[250px]'
     },
     horizontal: {
       width: '728px',
