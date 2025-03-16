@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
-import { weekSections, WeekSectionType, ChecklistItemType } from '@/lib/data';
+import { weekSections, WeekSectionType } from '@/lib/data';
 import WeekSection from './WeekSection';
-import ProgressTracker from './ProgressTracker';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { X, BarChart2 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import MobileProgressTracker from './MobileProgressTracker';
+import ConfettiEffect from './ConfettiEffect';
+import SidebarResources from './SidebarResources';
 import AdPlaceholder from './AdPlaceholder';
 
 const ChecklistSection: React.FC = () => {
@@ -53,27 +53,8 @@ const ChecklistSection: React.FC = () => {
 
   return (
     <section id="checklist-section" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
-      {/* Confetti animation container - positioned absolutely */}
-      {completedSectionId && (
-        <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-          <div className="confetti-container">
-            {Array.from({ length: 50 }).map((_, i) => (
-              <div 
-                key={i}
-                className="confetti"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `-10%`,
-                  backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
-                  width: `${Math.random() * 10 + 5}px`,
-                  height: `${Math.random() * 10 + 5}px`,
-                  animation: `fall ${Math.random() * 3 + 2}s linear forwards, sway ${Math.random() * 4 + 3}s ease-in-out infinite alternate`
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Confetti animation container */}
+      <ConfettiEffect isActive={!!completedSectionId} />
 
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-2 text-center text-gray-900">
@@ -95,97 +76,16 @@ const ChecklistSection: React.FC = () => {
             ))}
           </div>
           
-          <div className="md:col-span-1 hidden md:block">
-            <div className="sticky top-6 space-y-6">
-              <ProgressTracker weekSections={sections} />
-              
-              {/* Google Ad Placement - Top - Using medium-rectangle for less height */}
-              <AdPlaceholder type="medium-rectangle" />
-              
-              <div className="glassmorphism p-5">
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Resources</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a 
-                      href="#sim-offers"
-                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      Best SIM Card Offers
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="#wifi-deals"
-                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      WiFi Providers Comparison
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="#bank-offers"
-                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      Student Bank Accounts
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="#credit-offers"
-                      className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      Student Credit Cards
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Google Ad Placement - Bottom - Using medium-rectangle for less height */}
-              <AdPlaceholder type="medium-rectangle" />
-            </div>
-          </div>
+          <SidebarResources sections={sections} />
         </div>
       </div>
       
-      {/* Mobile floating progress button */}
-      {isMobile && (
-        <div className="md:hidden fixed bottom-6 right-6 z-50">
-          <AnimatePresence>
-            {showMobileProgress ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                className="bg-white rounded-lg shadow-lg p-4 max-w-xs"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-medium text-gray-900">Your Progress</h4>
-                  <button 
-                    onClick={() => setShowMobileProgress(false)}
-                    className="text-gray-500 hover:text-gray-700"
-                  >
-                    <X size={18} />
-                  </button>
-                </div>
-                <ProgressTracker weekSections={sections} />
-                <div className="text-xs text-gray-500 mt-3 text-center">
-                  Auto-hiding in a few seconds...
-                </div>
-              </motion.div>
-            ) : (
-              <motion.button
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setShowMobileProgress(true)}
-                className="bg-priority-high text-white p-3 rounded-full shadow-lg flex items-center justify-center"
-              >
-                <BarChart2 size={24} />
-              </motion.button>
-            )}
-          </AnimatePresence>
-        </div>
-      )}
+      {/* Mobile progress tracker component */}
+      <MobileProgressTracker 
+        sections={sections}
+        showMobileProgress={showMobileProgress}
+        setShowMobileProgress={setShowMobileProgress}
+      />
       
       {/* Mobile ad placement at bottom */}
       {isMobile && (
