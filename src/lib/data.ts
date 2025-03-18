@@ -1,3 +1,4 @@
+
 import { 
   Smartphone, Wifi, CreditCard, Building, Bus, 
   Banknote, AppWindow, FileText, Users, ShoppingBag, 
@@ -42,25 +43,25 @@ export const weekSections: WeekSectionType[] = [
           {
             text: "T-Mobile: Offers $25/mo student plans with 5G coverage and unlimited talk/text. Best for overall coverage in most cities.",
             links: [
-              { label: "T-Mobile Student Offer", url: "#t-mobile-student" }
+              { label: "T-Mobile Student Offer ($50 Bonus)", url: "#t-mobile-student" }
             ]
           },
           {
             text: "Mint Mobile: Budget-friendly at $15/mo for 4GB data. Perfect for cost-conscious students with good T-Mobile coverage in your area.",
             links: [
-              { label: "Mint Mobile Referral", url: "#mint-mobile-referral" }
+              { label: "Mint Mobile ($30 Credit)", url: "#mint-mobile-referral" }
             ]
           },
           {
             text: "AT&T: Reliable nationwide coverage at $35/mo for students. Great for rural areas and consistent service.",
             links: [
-              { label: "AT&T Student Discount", url: "#att-student" }
+              { label: "AT&T Student ($25 Discount)", url: "#att-student" }
             ]
           },
           {
             text: "Visible (Verizon): Unlimited data for $25/mo with Party Pay. Excellent for heavy data users.",
             links: [
-              { label: "Visible Party Pay", url: "#visible-party-pay" }
+              { label: "Visible ($20 First Month)", url: "#visible-party-pay" }
             ]
           },
           {
@@ -78,19 +79,19 @@ export const weekSections: WeekSectionType[] = [
           {
             text: "Xfinity: Student plans from $35/mo with 200Mbps speeds. Most widely available in urban areas.",
             links: [
-              { label: "Xfinity Student Offer", url: "#xfinity-student" }
+              { label: "Xfinity Student ($150 Gift Card)", url: "#xfinity-student" }
             ]
           },
           {
             text: "AT&T Fiber: High-speed fiber starting at $45/mo for 300Mbps. Best for online gaming and video conferences.",
             links: [
-              { label: "AT&T Fiber Deals", url: "#att-fiber-deals" }
+              { label: "AT&T Fiber ($200 Reward Card)", url: "#att-fiber-deals" }
             ]
           },
           {
             text: "Spectrum: No data caps starting at $49.99/mo for 300Mbps. Good option if you stream a lot of content.",
             links: [
-              { label: "Spectrum Internet", url: "#spectrum-internet" }
+              { label: "Spectrum ($100 Gift Card)", url: "#spectrum-internet" }
             ]
           },
           {
@@ -115,13 +116,16 @@ export const weekSections: WeekSectionType[] = [
             text: "Visit your university's ID card office with your admission letter and passport.",
           },
           {
-            text: "Typically located in the student union or administration building. Check your university's website for exact location and hours.",
+            text: "Your Cougar Card is your official UH ID card. It serves as your library card, meal card, and access card to various campus facilities.",
           },
           {
-            text: "Your ID card provides access to campus buildings, libraries, and often includes meal plans.",
+            text: "You'll need a government-issued photo ID to obtain your Cougar Card. First-time cards are $15 and replacement cards are $25.",
           },
           {
-            text: "Many local businesses offer student discounts with your university ID. Ask about the discount program at your orientation.",
+            text: "Many local businesses offer discounts with your university ID. Always ask about student discounts when shopping or dining.",
+            links: [
+              { label: "UH Cougar Card Info", url: "https://www.uh.edu/af-university-services/cougarcard/know-your-card/" }
+            ]
           }
         ],
         icon: CreditCard,
@@ -147,8 +151,8 @@ export const weekSections: WeekSectionType[] = [
           {
             text: "Consider ride-sharing services like Uber and Lyft for areas with limited public transportation. Both services offer $15 worth of free credits for students with valid .edu email addresses.",
             links: [
-              { label: "Uber Student ($15 Credit)", url: "#uber-student" },
-              { label: "Lyft Student ($15 Credit)", url: "#lyft-student" }
+              { label: "Uber Student ($15 Free Credit)", url: "#uber-student" },
+              { label: "Lyft Student ($15 Free Credit)", url: "#lyft-student" }
             ]
           }
         ],
@@ -163,25 +167,25 @@ export const weekSections: WeekSectionType[] = [
           {
             text: "Chase College Checking: No monthly fee for up to 5 years while in college. Large ATM network and modern mobile app.",
             links: [
-              { label: "Chase $200 Bonus", url: "#chase-bonus" }
+              { label: "Chase $200 Bonus Offer", url: "#chase-bonus" }
             ]
           },
           {
             text: "Bank of America Advantage Banking: Waived maintenance fees for students under 25. Great if you need branches across the country.",
             links: [
-              { label: "BofA Student Account", url: "#bofa-student" }
+              { label: "BofA $100 Student Bonus", url: "#bofa-student" }
             ]
           },
           {
             text: "Wells Fargo Everyday Checking: No monthly service fee for students. Easy to set up direct deposit for campus jobs.",
             links: [
-              { label: "Wells Fargo Student", url: "#wells-fargo-student" }
+              { label: "Wells Fargo $300 Bonus", url: "#wells-fargo-student" }
             ]
           },
           {
             text: "Capital One 360 Checking: No fees or minimums and earns interest. Completely online with great digital tools.",
             links: [
-              { label: "Capital One Account", url: "#capital-one" }
+              { label: "Capital One $150 Bonus", url: "#capital-one" }
             ]
           },
           {
@@ -197,34 +201,37 @@ export const weekSections: WeekSectionType[] = [
         description: "For transportation, food, shopping, and more",
         details: [
           {
-            text: "Transportation: Uber, Lyft, Google Maps",
+            text: "Transportation: Uber, Lyft, Google Maps, Hitch",
             links: [
-              { label: "Uber", url: "#uber" },
-              { label: "Lyft", url: "#lyft" },
-              { label: "Google Maps", url: "#google-maps" }
+              { label: "Uber ($15 Free Credit)", url: "#uber" },
+              { label: "Lyft ($15 Free Credit)", url: "#lyft" },
+              { label: "Google Maps", url: "#google-maps" },
+              { label: "Hitch ($10 Off First Ride)", url: "#hitch" }
             ]
           },
           {
-            text: "Food & Groceries: UberEats, DoorDash, Instacart, Walmart+",
+            text: "Food & Groceries: UberEats, DoorDash, Instacart, GrubHub, Gopuff",
             links: [
               { label: "UberEats ($10 Off)", url: "#ubereats" },
               { label: "DoorDash ($15 Off)", url: "#doordash" },
-              { label: "Instacart", url: "#instacart" },
-              { label: "Walmart+", url: "#walmart" }
+              { label: "Instacart ($20 Off First Order)", url: "#instacart" },
+              { label: "GrubHub ($12 Off First Order)", url: "#grubhub" },
+              { label: "Gopuff ($10 Credit)", url: "#gopuff" }
             ]
           },
           {
             text: "Payments: Zelle, Venmo, PayPal, Cash App",
             links: [
-              { label: "Venmo", url: "#venmo" },
+              { label: "Venmo ($10 Bonus)", url: "#venmo" },
               { label: "Cash App ($5 Bonus)", url: "#cash-app" }
             ]
           },
           {
-            text: "Shopping: Amazon, Facebook Marketplace, OfferUp",
+            text: "Shopping: Amazon, Facebook Marketplace, OfferUp, InKind",
             links: [
-              { label: "Amazon Prime Student", url: "#amazon-student" },
-              { label: "Facebook Marketplace", url: "#facebook" }
+              { label: "Amazon Prime Student (6-mo Free)", url: "#amazon-student" },
+              { label: "Facebook Marketplace", url: "#facebook" },
+              { label: "InKind ($25 Credit)", url: "#inkind" }
             ]
           },
           {
@@ -332,13 +339,31 @@ export const weekSections: WeekSectionType[] = [
         description: "Important for future housing and financial opportunities",
         details: [
           {
-            text: "Best student credit cards: Discover It, Chase Freedom, Capital One Journey.",
+            text: "Chase Freedom Unlimited: No annual fee, 1.5% cashback on all purchases, and a sign-up bonus worth $200 after spending $500 in the first 3 months.",
             links: [
-              { label: "Check Best Credit Card Offers", url: "#credit-offers" }
+              { label: "Chase Freedom ($200 Bonus)", url: "#chase-freedom" }
             ]
           },
           {
-            text: "Benefits include no foreign transaction fees and cashback on purchases.",
+            text: "Capital One Quicksilver Student: No annual fee, 1.5% cash back on all purchases, and no foreign transaction fees.",
+            links: [
+              { label: "Capital One Student ($100 Bonus)", url: "#capital-one-student" }
+            ]
+          },
+          {
+            text: "Discover it Student Cash Back: No annual fee, 5% cash back in rotating categories, and they match all cash back earned in the first year.",
+            links: [
+              { label: "Discover Student (Cashback Match)", url: "#discover-student" }
+            ]
+          },
+          {
+            text: "Bank of America Customized Cash Rewards for Students: No annual fee, 3% cash back in a category of your choice, 2% at grocery stores and wholesale clubs.",
+            links: [
+              { label: "BofA Student ($200 Bonus)", url: "#bofa-cash-rewards" }
+            ]
+          },
+          {
+            text: "Secured credit cards are also a good option if you're having trouble qualifying for traditional credit cards. They require a security deposit but are easier to get approved for with no credit history.",
           }
         ],
         icon: BadgeCheck,

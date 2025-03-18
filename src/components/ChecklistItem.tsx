@@ -48,7 +48,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
     >
       <div 
         className={cn(
-          "flex items-start gap-4 p-4 cursor-pointer",
+          "flex items-start gap-3 p-4 cursor-pointer",
           isExpanded ? "pb-2" : ""
         )}
         onClick={toggleExpanded}
@@ -100,9 +100,9 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="px-4 pb-4 pt-0"
+            className="px-3 pb-4 pt-0"
           >
-            <div className="ml-12 pl-2 border-l-2 border-blue-100">
+            <div className="ml-11 pl-1 border-l-2 border-blue-100">
               {item.details.map((detail, index) => (
                 <div key={index} className="mb-3 last:mb-0">
                   <p className="text-sm text-gray-700 mb-1">{detail.text}</p>
@@ -126,7 +126,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
               ))}
             </div>
             
-            <div className="mt-4 ml-12">
+            <div className="mt-4 ml-11">
               <button
                 onClick={handleToggleComplete}
                 className={cn(
@@ -157,4 +157,3 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
 };
 
 export default ChecklistItem;
-
