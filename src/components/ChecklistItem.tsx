@@ -102,7 +102,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
             transition={{ duration: 0.3 }}
             className="px-4 pb-4 pt-0"
           >
-            <div className="ml-12 pl-4 border-l-2 border-blue-100">
+            <div className="ml-12 pl-2 border-l-2 border-blue-100">
               {item.details.map((detail, index) => (
                 <div key={index} className="mb-3 last:mb-0">
                   <p className="text-sm text-gray-700 mb-1">{detail.text}</p>
@@ -157,3 +157,4 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ item, priority, onToggleC
 };
 
 export default ChecklistItem;
+

@@ -43,7 +43,7 @@ const FAQSection: React.FC<FAQProps> = ({ faqs }) => {
             >
               <div className="flex justify-between items-center">
                 <h3 className={cn(
-                  "text-sm font-medium",
+                  "text-base font-medium",
                   expandedIndex === index ? "text-blue-700" : "text-gray-800"
                 )}>
                   {faq.question}
@@ -68,7 +68,7 @@ const FAQSection: React.FC<FAQProps> = ({ faqs }) => {
                 >
                   <div className="px-4 pb-4 text-gray-600">
                     <div className="border-t border-gray-100 pt-3">
-                      <p className="text-xs">{faq.answer}</p>
+                      <p className="text-sm">{faq.answer}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -82,3 +82,4 @@ const FAQSection: React.FC<FAQProps> = ({ faqs }) => {
 };
 
 export default FAQSection;
+
