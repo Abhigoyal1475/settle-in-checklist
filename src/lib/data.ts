@@ -1,4 +1,3 @@
-
 import { 
   Smartphone, Wifi, CreditCard, Building, Bus, 
   Banknote, AppWindow, FileText, Users, ShoppingBag, 
@@ -134,23 +133,22 @@ export const weekSections: WeekSectionType[] = [
         description: "Cheap public transport for daily commutes",
         details: [
           {
-            text: "Cost: Approximately $40/month for unlimited rides in most major cities.",
+            text: "Students can apply for a COAST Card if they live in an eligible ZIP code or live on campus.",
           },
           {
-            text: "Visit your university's transportation office with your student ID to get discounted rates. Some universities include transit passes in tuition.",
+            text: "The COAST Card program provides free access to the entire METRO service area through a Q Card loaded with METRO credits.",
           },
           {
-            text: "Download transit apps like Citymapper or Transit for real-time schedules and route planning.",
+            text: "Visit the university's transportation office with your student ID to apply for the COAST Card or check your eligibility.",
             links: [
-              { label: "Citymapper App", url: "#citymapper" },
-              { label: "Transit App", url: "#transit-app" }
+              { label: "UH COAST Card Program", url: "https://www.uh.edu/parking/transportation-options/" }
             ]
           },
           {
-            text: "Consider ride-sharing services like Uber and Lyft for areas with limited public transportation. Look for student discount codes.",
+            text: "Consider ride-sharing services like Uber and Lyft for areas with limited public transportation. Both services offer $15 worth of free credits for students with valid .edu email addresses.",
             links: [
-              { label: "Uber Student", url: "#uber-student" },
-              { label: "Lyft Student", url: "#lyft-student" }
+              { label: "Uber Student ($15 Credit)", url: "#uber-student" },
+              { label: "Lyft Student ($15 Credit)", url: "#lyft-student" }
             ]
           }
         ],
@@ -199,11 +197,10 @@ export const weekSections: WeekSectionType[] = [
         description: "For transportation, food, shopping, and more",
         details: [
           {
-            text: "Transportation: Uber, Lyft, Transit, Google Maps",
+            text: "Transportation: Uber, Lyft, Google Maps",
             links: [
               { label: "Uber", url: "#uber" },
               { label: "Lyft", url: "#lyft" },
-              { label: "Transit", url: "#transit" },
               { label: "Google Maps", url: "#google-maps" }
             ]
           },
