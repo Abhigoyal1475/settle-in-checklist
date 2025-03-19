@@ -7,8 +7,6 @@ import MobileProgressTracker from './MobileProgressTracker';
 import ConfettiEffect from './ConfettiEffect';
 import SidebarResources from './SidebarResources';
 import AdPlaceholder from './AdPlaceholder';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Calendar, CalendarCheck, CalendarClock } from 'lucide-react';
 
 const ChecklistSection: React.FC = () => {
   const [sections, setSections] = useState<WeekSectionType[]>(weekSections);
@@ -53,20 +51,6 @@ const ChecklistSection: React.FC = () => {
     }
   };
 
-  // Helper function to get tab icon based on priority
-  const getTabIcon = (priority: string) => {
-    switch (priority) {
-      case 'high':
-        return <Calendar className="mr-2" size={16} />;
-      case 'medium':
-        return <CalendarCheck className="mr-2" size={16} />;
-      case 'low':
-        return <CalendarClock className="mr-2" size={16} />;
-      default:
-        return <Calendar className="mr-2" size={16} />;
-    }
-  };
-
   return (
     <section id="checklist-section" className="py-16 px-6 bg-gray-50 relative overflow-hidden">
       {/* Confetti animation container */}
@@ -76,46 +60,23 @@ const ChecklistSection: React.FC = () => {
         <h2 className="text-3xl font-bold mb-2 text-center text-gray-900">
           Your Step-by-Step Checklist
         </h2>
-        <p className="text-gray-600 mb-8 text-center max-w-2xl mx-auto">
+        <p className="text-gray-600 mb-12 text-center max-w-2xl mx-auto">
           Complete these tasks in order of priority to ensure a smooth transition to your new life in the U.S.
         </p>
         
-        {/* Tab Navigation */}
-        <div className="sticky top-0 z-10 pt-2 pb-4 bg-gray-50">
-          <Tabs defaultValue={sections[0].id} className="w-full">
-            <TabsList className="w-full mb-4 bg-gray-100 p-1">
-              {sections.map(section => (
-                <TabsTrigger 
-                  key={section.id} 
-                  value={section.id}
-                  className="flex items-center"
-                >
-                  {getTabIcon(section.priority)}
-                  <span className="hidden sm:inline">{section.title.split('–')[0].trim()}</span>
-                  <span className="sm:hidden">{
-                    section.priority === 'high' ? 'Week 1' : 
-                    section.priority === 'medium' ? 'Week 2-3' : 'Week 4+'
-                  }</span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="md:col-span-3">
-                {sections.map((section) => (
-                  <TabsContent key={section.id} value={section.id} className="mt-0">
-                    <WeekSection
-                      section={section}
-                      onToggleComplete={handleToggleComplete}
-                      isCompleted={completedSectionId === section.id}
-                    />
-                  </TabsContent>
-                ))}
-              </div>
-              
-              <SidebarResources sections={sections} />
-            </div>
-          </Tabs>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-3">
+            {sections.map((section) => (
+              <WeekSection
+                key={section.id}
+                section={section}
+                onToggleComplete={handleToggleComplete}
+                isCompleted={completedSectionId === section.id}
+              />
+            ))}
+          </div>
+          
+          <SidebarResources sections={sections} />
         </div>
       </div>
       
