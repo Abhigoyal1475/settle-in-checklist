@@ -1,7 +1,6 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/providers/ThemeProvider";
-import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
 
 export function ThemeToggle() {
@@ -11,8 +10,8 @@ export function ThemeToggle() {
     <div className="fixed top-4 right-4 z-50">
       <Toggle
         pressed={theme === "dark"}
-        onPressedChange={(pressed) => {
-          setTheme(pressed ? "dark" : "light");
+        onPressedChange={() => {
+          setTheme(theme === "dark" ? "light" : "dark");
         }}
         className="p-2 rounded-full bg-background border border-border"
         aria-label="Toggle theme"
