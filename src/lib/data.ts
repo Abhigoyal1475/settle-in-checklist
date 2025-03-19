@@ -1,4 +1,3 @@
-
 import { 
   Smartphone, Wifi, CreditCard, Building, Bus, 
   Banknote, AppWindow, FileText, Users, ShoppingBag, 
@@ -108,6 +107,65 @@ export const weekSections: WeekSectionType[] = [
         completed: false
       },
       {
+        id: "apps",
+        title: "Download Essential Apps",
+        description: "For transportation, food, shopping, and more",
+        details: [
+          {
+            text: "Crazy Cashback & Free Money: Rakuten, TopCashback",
+            links: [
+              { label: "Rakuten ($40 Bonus)", url: "#rakuten" },
+              { label: "TopCashback ($40 Bonus)", url: "#topcashback" }
+            ]
+          },
+          {
+            text: "Transportation: Uber, Lyft, Google Maps, Hitch",
+            links: [
+              { label: "Uber ($15 Free Credit)", url: "#uber" },
+              { label: "Lyft ($15 Free Credit)", url: "#lyft" },
+              { label: "Google Maps", url: "#google-maps" },
+              { label: "Hitch ($10 Off First Ride)", url: "#hitch" }
+            ]
+          },
+          {
+            text: "Food & Groceries: UberEats, DoorDash, Instacart, GrubHub, Gopuff, InKind",
+            links: [
+              { label: "UberEats ($10 Off)", url: "#ubereats" },
+              { label: "DoorDash ($15 Off)", url: "#doordash" },
+              { label: "Instacart ($20 Off First Order)", url: "#instacart" },
+              { label: "GrubHub ($12 Off First Order)", url: "#grubhub" },
+              { label: "Gopuff ($10 Credit)", url: "#gopuff" },
+              { label: "InKind ($25 Credit)", url: "#inkind" }
+            ]
+          },
+          {
+            text: "Payments: Zelle, Venmo, PayPal, Cash App",
+            links: [
+              { label: "Venmo ($10 Bonus)", url: "#venmo" },
+              { label: "Cash App ($5 Bonus)", url: "#cash-app" }
+            ]
+          },
+          {
+            text: "Shopping: Amazon, Walmart, Best Buy, OfferUp",
+            links: [
+              { label: "Amazon Prime Student (6-mo Free)", url: "#amazon-student" },
+              { label: "Walmart ($10 Off First Order)", url: "#walmart" },
+              { label: "Best Buy (Student Deals)", url: "#best-buy" },
+              { label: "OfferUp", url: "#offerup" }
+            ]
+          },
+          {
+            text: "Student Discounts: UNiDAYS, Student Beans, Prime Student",
+            links: [
+              { label: "UNiDAYS", url: "#unidays" },
+              { label: "Student Beans", url: "#student-beans" }
+            ]
+          }
+        ],
+        icon: AppWindow,
+        completed: false
+      },
+      {
         id: "id-card",
         title: "Get Your University ID Card",
         description: "Needed for campus access & student benefits",
@@ -193,56 +251,6 @@ export const weekSections: WeekSectionType[] = [
           }
         ],
         icon: Banknote,
-        completed: false
-      },
-      {
-        id: "apps",
-        title: "Download Essential Apps",
-        description: "For transportation, food, shopping, and more",
-        details: [
-          {
-            text: "Transportation: Uber, Lyft, Google Maps, Hitch",
-            links: [
-              { label: "Uber ($15 Free Credit)", url: "#uber" },
-              { label: "Lyft ($15 Free Credit)", url: "#lyft" },
-              { label: "Google Maps", url: "#google-maps" },
-              { label: "Hitch ($10 Off First Ride)", url: "#hitch" }
-            ]
-          },
-          {
-            text: "Food & Groceries: UberEats, DoorDash, Instacart, GrubHub, Gopuff",
-            links: [
-              { label: "UberEats ($10 Off)", url: "#ubereats" },
-              { label: "DoorDash ($15 Off)", url: "#doordash" },
-              { label: "Instacart ($20 Off First Order)", url: "#instacart" },
-              { label: "GrubHub ($12 Off First Order)", url: "#grubhub" },
-              { label: "Gopuff ($10 Credit)", url: "#gopuff" }
-            ]
-          },
-          {
-            text: "Payments: Zelle, Venmo, PayPal, Cash App",
-            links: [
-              { label: "Venmo ($10 Bonus)", url: "#venmo" },
-              { label: "Cash App ($5 Bonus)", url: "#cash-app" }
-            ]
-          },
-          {
-            text: "Shopping: Amazon, Facebook Marketplace, OfferUp, InKind",
-            links: [
-              { label: "Amazon Prime Student (6-mo Free)", url: "#amazon-student" },
-              { label: "Facebook Marketplace", url: "#facebook" },
-              { label: "InKind ($25 Credit)", url: "#inkind" }
-            ]
-          },
-          {
-            text: "Student Discounts: UNiDAYS, Student Beans, Prime Student",
-            links: [
-              { label: "UNiDAYS", url: "#unidays" },
-              { label: "Student Beans", url: "#student-beans" }
-            ]
-          }
-        ],
-        icon: AppWindow,
         completed: false
       }
     ]
