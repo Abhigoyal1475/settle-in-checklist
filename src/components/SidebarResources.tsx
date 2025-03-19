@@ -2,7 +2,7 @@
 import React from 'react';
 import AdPlaceholder from './AdPlaceholder';
 import ProgressTracker from './ProgressTracker';
-import { WeekSectionType } from '@/lib/data';
+import { WeekSectionType } from '@/lib/types';
 
 interface SidebarResourcesProps {
   sections: WeekSectionType[];
