@@ -69,6 +69,11 @@ export default {
 					low: '#f97316',      // Orange for Week 4+
 				},
 				glass: 'rgba(255, 255, 255, 0.8)',
+				tab: {
+					active: '#ffffff',
+					inactive: '#f1f1f1',
+					hover: '#e5deff',
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
